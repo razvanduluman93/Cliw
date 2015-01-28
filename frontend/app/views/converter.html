@@ -1,0 +1,72 @@
+<title>Bitcoin Investment Calculator</title>
+
+
+<div class="jumbotron" ng-controller="ConverterCtrl">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1>Bitcoin Investment<br>Calculator</h1>
+      <br>
+      <br>
+      <form role="form">
+        <label for="starting-investment">Initial Investment (USD)</label>
+        <input type="number" class="form-control" ng-model="initalAmt" placeholder="{{initalAmt}}">
+      </form>
+    </div>
+  </div>
+  <br/>
+  <p>Your BitCoin's value is: {{currMoney(initalAmt) | currency }}</p>
+  <br/>
+
+  <div class="row">
+    <table class="table table-striped table-hover ">
+      <thead>
+        <tr class="danger">
+          <th >Price of 1 BTC</th>
+          <th>Starting Investment</th>
+          <th>Profit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="danger">
+          <td >${{currRate}}</td>
+          <td>{{ newAmt(currRate) | currency }}</td>
+          <td>{{ profit(currRate) | currency }}</td>
+        </tr>
+        <tr class="danger">
+          <td>$500</td>
+          <td>{{ newAmt(500) | currency }}</td>
+          <td>{{ profit(500) | currency }}</td>
+        </tr>
+        <tr class="danger">
+          <td>$1000</td>
+          <td>{{ newAmt(1000) | currency }}</td>
+          <td>{{ profit(1000) | currency }}</td>
+        </tr >
+        <tr class="danger">
+          <td>$5,000</td>
+          <td>{{ newAmt(5000) | currency }}</td>
+          <td>{{ profit(5000) | currency }}</td>
+        </tr>
+        <tr class="danger">
+          <td>$10,000</td>
+          <td>{{ newAmt(10000) | currency }}</td>
+          <td>{{ profit(10000) | currency }}</td>
+        </tr>
+        <tr class="danger">
+          <td>$25,000</td>
+          <td>{{ newAmt(25000) | currency }}</td>
+          <td>{{ profit(25000) | currency }}</td>
+        </tr>
+        <tr class="danger">
+          <td>$50,000</td>
+          <td>{{ newAmt(50000) | currency }}</td>
+          <td>{{ profit(50000) | currency }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<p>Current Price (USD): ${{currRate}}</p>
+
+

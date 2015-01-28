@@ -1,0 +1,27 @@
+<div class="jumbotron" data-ng-controller="MapCtrl">
+  <h1 class="form-signin-heading text-muted">Marketplace</h1>
+
+  <div>
+    Please select a country:
+    <select class="form-control" id="country" ng-model="products" ng-options="country for (country, products) in countries">
+      <option value={{country}}>Select</option>
+    </select>
+  </div>
+  Please select a product:
+  <select class="form-control" id="state" ng-disabled="!products" ng-model="prices" ng-options="product for (product,prices) in products">
+    <option value='{{product}}'>Select</option>
+  </select>
+
+  <form class="form-signin" novalidate>
+    Enter the amount of money you have
+    <input name="amount" ng-model="amount" type="number" class="form-control" placeholder="{{amount}}" required>
+  </form>
+
+
+  <div>
+    <p>Amount of items you can buy with your money : {{productsAmount(amount, prices) | number:0}}</p>
+
+  </div>
+</div>
+
+
